@@ -15,7 +15,7 @@
     }
 
     &__text-logo {
-        font-family: "Cabin Sketch", cursive;
+        font-family: $font-logo;
         font-size: 4rem;
         margin: 0rem;
         text-align: center;
@@ -25,6 +25,6 @@
         margin: 0rem 1rem 0rem 0rem;
         text-align: end;
         font-size: 1.5rem;
-        font-family: "Special Elite", cursive;
+        font-family: $font-caption;
     }
 }
