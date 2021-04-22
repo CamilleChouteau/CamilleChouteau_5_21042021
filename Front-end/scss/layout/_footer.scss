@@ -1,14 +1,13 @@
-.menu {
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: $color-quaternary;
+    padding: 1.5rem;
+}
+
+.social-media-container {
     display: flex;
     justify-content: space-around;
-
-    &__homepage {
-        color: #cfa280;
-        font-size: 3rem;
-    }
-
-    &__cart {
-        color: #cfa280;
-        font-size: 3rem;
-    }
+    width: 60%;
+    // border-bottom: #cfa280 0.1rem solid;
 }
