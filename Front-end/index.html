@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="" />
-        <script src="./index.js" defer></script>
+        <script src="./js/index.js" defer></script>
         <link rel="stylesheet" href="css/style.min.css" />
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -38,16 +38,15 @@
                 Notre sélection de meubles en chêne massif faits en France
             </h3>
 
-            <div class="products-list">
-                <article class="product">
-                    <img
-                        class="product__img"
-                        src="../Back-end/images/oak_1.jpg"
-                    />
-                    <div class="product__description">
-                        <p class="product__name">Siège rustique</p>
-                    </div>
-                </article>
+            <div id="products-list" class="products-list">
+                <template id="product-template">
+                    <article>
+                        <a class="product" href="product.html" title="Produit"
+                            ><img class="product__img" />
+                            <div class="product__description">
+                                <p class="product__name"></p></div
+                        ></a></article
+                ></template>
             </div>
         </main>
 

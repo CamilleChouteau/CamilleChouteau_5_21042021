@@ -7,6 +7,8 @@
 
 .products-list {
     display: flex;
+    flex-direction: column;
+    gap: 5rem;
     justify-content: center;
     width: 70%;
     padding: 1rem 15% 5rem 15%;
@@ -19,6 +21,8 @@
     display: flex;
     overflow: hidden;
     border-radius: 2.5rem;
+    text-decoration: none;
+    color: black;
 
     &__img {
         position: absolute;
@@ -35,7 +39,7 @@
 
         margin-top: auto;
 
-        background-color: rgba(224, 207, 186, 0.55);
+        background-color: rgba(224, 207, 186, 0.75);
         -webkit-transition: opacity 0.3s ease;
         transition: opacity 0.3s ease;
     }
