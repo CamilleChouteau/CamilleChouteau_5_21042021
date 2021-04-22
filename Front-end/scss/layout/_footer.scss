@@ -1,14 +1,14 @@
 .menu {
     display: flex;
     justify-content: space-around;
-}
 
-.homepage {
-    color: #cfa280;
-    font-size: 3rem;
-}
+    &__homepage {
+        color: #cfa280;
+        font-size: 3rem;
+    }
 
-.card {
-    color: #cfa280;
-    font-size: 3rem;
+    &__cart {
+        color: #cfa280;
+        font-size: 3rem;
+    }
 }

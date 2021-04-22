@@ -22,11 +22,17 @@
         <title>Document</title>
     </head>
     <body>
-        <header>
-            <img class="chair-logo" src="img/chair.webp" />
-            <h1 class="logo">Orinoak</h1>
-            <h2 class="caption">By Orinoco</h2>
+        <header class="header">
+            <a
+                class="header__hyperlink"
+                href="index.html"
+                title="Page d'accueil"
+                ><img class="header__logo" src="img/chair.webp" />
+                <h1 class="header__text-logo">Orinoak</h1>
+                <h2 class="header__caption">By Orinoco</h2>
+            </a>
         </header>
+
         <main>
             <h3 class="description">
                 Notre sélection de meubles en chêne massif faits en France
@@ -34,11 +40,14 @@
         </main>
         <footer>
             <div class="menu">
-                <a class="homepage" href="index.html" title="Page d'accueil"
+                <a
+                    class="menu__homepage"
+                    href="index.html"
+                    title="Page d'accueil"
                     ><i class="fas fa-home"></i
                 ></a>
 
-                <a class="card" href="cart.html" title="Panier"
+                <a class="menu__cart" href="cart.html" title="Panier"
                     ><i class="fas fa-shopping-cart"></i
                 ></a>
             </div>

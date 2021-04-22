@@ -1,25 +1,30 @@
-header {
+.header {
     background-color: #fff4ec;
     position: relative;
-}
-.chair-logo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 25%;
-    position: absolute;
-}
 
-.logo {
-    font-family: "Cabin Sketch", cursive;
-    font-size: 4rem;
-    margin: 0rem;
-    text-align: center;
-}
+    &__hyperlink {
+        text-decoration: none;
+        color: black;
+    }
+    &__logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 25%;
+        position: absolute;
+    }
 
-.caption {
-    margin: 0rem 1rem 0rem 0rem;
-    text-align: end;
-    font-size: 1.5rem;
-    font-family: "Special Elite", cursive;
+    &__text-logo {
+        font-family: "Cabin Sketch", cursive;
+        font-size: 4rem;
+        margin: 0rem;
+        text-align: center;
+    }
+
+    &__caption {
+        margin: 0rem 1rem 0rem 0rem;
+        text-align: end;
+        font-size: 1.5rem;
+        font-family: "Special Elite", cursive;
+    }
 }
