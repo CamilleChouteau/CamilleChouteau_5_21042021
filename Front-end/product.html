@@ -5,14 +5,82 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="" />
-        <script src="./product.js" defer></script>
+        <script src="./js/product.js" defer></script>
         <link rel="stylesheet" href="css/style.min.css" />
 
-        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Aclonica&family=Cabin+Sketch:wght@400;700&family=RocknRoll+One&family=Special+Elite&display=swap"
+            rel="stylesheet"
+        />
+
+        <script
+            src="https://kit.fontawesome.com/a0ec0fe392.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <title>Orinoak</title>
     </head>
     <body>
-        <header></header>
-        <main></main>
-        <footer></footer>
+        <header class="header">
+            <a
+                class="header__hyperlink"
+                href="index.html"
+                title="Page d'accueil"
+                ><img class="header__logo" src="img/chair.webp" />
+                <h1 class="header__text-logo">Orinoak</h1>
+                <h2 class="header__caption">By Orinoco</h2>
+            </a>
+        </header>
+
+        <main class="main">
+            <h3 class="description">
+                Notre sélection de meubles en chêne massif faits en France
+            </h3>
+
+            <div id="products-list" class="products-list">
+                <template id="product-template">
+                    <article>
+                        <a class="product" href="product.html" title="Produit"
+                            ><img class="product__img" />
+                            <div class="product__description">
+                                <p class="product__name"></p></div
+                        ></a></article
+                ></template>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="social-media-container">
+                <a
+                    class="clickable-icons--social"
+                    href="https://twitter.com/"
+                    title="Twitter"
+                    ><i class="fab fa-twitter"></i
+                ></a>
+                <a
+                    class="clickable-icons--social"
+                    href="https://www.instagram.com/"
+                    title="Instagram"
+                    ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                    class="clickable-icons--social"
+                    href="https://fr-fr.facebook.com/"
+                    title="Facebook"
+                    ><i class="fab fa-facebook-square"></i
+                ></a>
+            </div>
+        </footer>
+
+        <section class="menu">
+            <a class="clickable-icons" href="index.html" title="Page d'accueil"
+                ><i class="fas fa-home"></i
+            ></a>
+
+            <a class="clickable-icons" href="cart.html" title="Panier"
+                ><i class="fas fa-shopping-cart"></i
+            ></a>
+        </section>
     </body>
 </html>

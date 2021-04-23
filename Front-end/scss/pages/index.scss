@@ -12,6 +12,10 @@
     justify-content: center;
     width: 70%;
     padding: 1rem 15% 5rem 15%;
+
+    @include responsive("tablet");
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .product {
