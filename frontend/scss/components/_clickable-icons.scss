@@ -3,6 +3,12 @@
     font-size: 3rem;
     transition: all 0.1s;
 
+    @include responsive("desktop") {
+        text-align: center;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
     &:hover {
         color: $color-secondary;
     }
@@ -11,6 +17,10 @@
         @extend .clickable-icons;
         color: $color-secondary;
         border-bottom: 0.2rem $color-secondary solid;
+
+        @include responsive("desktop");
+        border: none;
+        color: black;
     }
 
     &--social {

@@ -1,4 +1,4 @@
-.menu {
+.menu-mobile {
     background-color: $color-primary;
     padding: 3rem 0rem 1rem 0rem;
     display: flex;
@@ -6,4 +6,36 @@
     position: sticky;
     bottom: 0px;
     width: 100%;
+
+    @include responsive("desktop") {
+        display: none;
+    }
+}
+
+.menu-desktop {
+    display: none;
+    @include responsive("desktop") {
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+        padding: 2rem 5rem 0rem 0rem;
+    }
+
+    &__home {
+        @include responsive("desktop") {
+            font-family: $font-description;
+            font-size: 1.2rem;
+            margin: 0;
+            padding-top: 0.7rem;
+        }
+    }
+
+    &__shopping-cart {
+        @include responsive("desktop") {
+            font-family: $font-description;
+            font-size: 1.2rem;
+            margin: 0;
+            padding-top: 0.7rem;
+        }
+    }
 }

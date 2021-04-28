@@ -1,6 +1,3 @@
-// On exécute la fonction getAndPopulateProducts au chargement de la page
-getAndPopulateProducts();
-
 const getAndPopulateProducts = () => {
     // Fetch envoie une requête de type GET (par défaut) au back-end qui nous répond la listes des produits
     fetch("http://localhost:3000/api/furniture")
@@ -54,3 +51,6 @@ const displayProduct = (product) => {
     const productsList = document.getElementById("products-list");
     productsList.appendChild(clonedProduct);
 };
+
+// On exécute la fonction getAndPopulateProducts au chargement de la page
+getAndPopulateProducts();
