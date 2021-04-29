@@ -1,57 +1,65 @@
-.description {
-    font-family: $font-description;
-    font-weight: lighter;
-    text-align: center;
-    margin: 3rem;
-}
-
-.products-list {
+.main {
     display: flex;
-    flex-direction: column;
-    gap: 5rem;
     justify-content: center;
-    width: 70%;
-    padding: 1rem 15% 5rem 15%;
+    align-items: center;
+    flex-direction: column;
 
-    @include responsive("tablet") {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-.product {
-    position: relative;
-    height: 15rem;
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-    border-radius: 2.5rem;
-    text-decoration: none;
-    color: black;
-    box-shadow: #ccc 0.1rem 0.2rem 0.4rem;
-
-    &__img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-
-        z-index: -1;
-    }
-
-    &__description {
-        border-radius: 2.5rem 2.5rem 0rem 0rem;
-        width: 100%;
-
-        margin-top: auto;
-
-        background-color: rgba(224, 207, 186, 0.75);
-        -webkit-transition: opacity 0.3s ease;
-        transition: opacity 0.3s ease;
-    }
-
-    &__name {
-        margin: 1.5rem 1.5rem 1.5rem 3rem;
+    .description {
         font-family: $font-description;
+        font-weight: lighter;
+        text-align: center;
+        margin: 3rem;
+    }
+
+    .products-list {
+        max-width: 1500px;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        justify-content: center;
+        width: 70%;
+        padding: 1rem 15% 5rem 15%;
+
+        @include responsive("tablet") {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .product {
+        position: relative;
+        height: 15rem;
+        width: 100%;
+        display: flex;
+        overflow: hidden;
+        border-radius: 2.5rem;
+        text-decoration: none;
+        color: black;
+        box-shadow: #ccc 0.1rem 0.2rem 0.4rem;
+
+        &__img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            z-index: -1;
+        }
+
+        &__description {
+            border-radius: 2.5rem 2.5rem 0rem 0rem;
+            width: 100%;
+
+            margin-top: auto;
+
+            background-color: rgba(224, 207, 186, 0.75);
+            -webkit-transition: opacity 0.3s ease;
+            transition: opacity 0.3s ease;
+        }
+
+        &__name {
+            margin: 1.5rem 1.5rem 1.5rem 3rem;
+            font-family: $font-description;
+        }
     }
 }
