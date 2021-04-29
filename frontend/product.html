@@ -51,21 +51,46 @@
             </nav>
         </header>
 
-        <main class="main">
-            <h3 class="description">
-                Notre sélection de meubles en chêne massif faits en France
-            </h3>
+        <main class="main-product">
+            <article class="product-information">
+                <img class="product-information__img" src="./img/oak_1.jpg" />
+                <div class="product-information__title-price">
+                    <h3 class="product-information__name">Cross Table</h3>
+                    <p class="product-information__price">599€</p>
+                </div>
+                <div class="product-information__list">
+                    <label
+                        class="product-information__varnish"
+                        for="varnish-select"
+                        >Choose your varnish :</label
+                    >
+                    <select
+                        class="produtc-information__varnish-select"
+                        id="varnish-select"
+                    >
+                        <option value="">--Please choose an option--</option>
+                        <option value="tan">Tan</option>
+                        <option value="chocolate">Chocolate</option>
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                    </select>
+                </div>
 
-            <div id="products-list" class="products-list">
-                <template id="product-template">
-                    <article>
-                        <a class="product" href="product.html" title="Produit"
-                            ><img class="product__img" />
-                            <div class="product__description">
-                                <p class="product__name"></p></div
-                        ></a></article
-                ></template>
-            </div>
+                <p class="product-information__description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                </p>
+
+                <a
+                    class="add-to-cart-button"
+                    href=""
+                    title="Add to your shopping cart"
+                    ><button class="button">
+                        Add to your shopping cart
+                    </button></a
+                >
+            </article>
         </main>
 
         <footer class="footer">
@@ -89,6 +114,7 @@
                     ><i class="fab fa-facebook-square"></i
                 ></a>
             </div>
+            <p class="footer-copyright">Orinoak by Orinoco © Copyright 2021</p>
         </footer>
 
         <section class="menu-mobile">

@@ -1,6 +1,9 @@
 .footer {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.8rem;
     background-color: $color-quaternary;
     padding: 1.5rem;
 }
@@ -9,4 +12,8 @@
     display: flex;
     justify-content: space-around;
     width: 60%;
+}
+
+.footer-copyright {
+    font-family: $font-description;
 }
