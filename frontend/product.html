@@ -53,10 +53,10 @@
 
         <main class="main-product">
             <article class="product-information">
-                <img class="product-information__img" src="./img/oak_1.jpg" />
+                <img id="productImage" class="product-information__img" />
                 <div class="product-information__title-price">
-                    <h3 class="product-information__name">Cross Table</h3>
-                    <p class="product-information__price">599€</p>
+                    <h3 id="productName" class="product-information__name"></h3>
+                    <p id="productPrice" class="product-information__price"></p>
                 </div>
                 <div class="product-information__list">
                     <label
@@ -65,31 +65,22 @@
                         >Choose your varnish :</label
                     >
                     <select
+                        id="productVarnish"
                         class="produtc-information__varnish-select"
                         id="varnish-select"
                     >
                         <option value="">--Please choose an option--</option>
-                        <option value="tan">Tan</option>
-                        <option value="chocolate">Chocolate</option>
-                        <option value="black">Black</option>
-                        <option value="white">White</option>
                     </select>
                 </div>
 
-                <p class="product-information__description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                </p>
+                <p
+                    id="productDescription"
+                    class="product-information__description"
+                ></p>
 
-                <a
-                    class="add-to-cart-button"
-                    href=""
-                    title="Add to your shopping cart"
-                    ><button class="button">
-                        Add to your shopping cart
-                    </button></a
-                >
+                <div class="add-to-cart-button">
+                    <button class="button">Add to your shopping cart</button>
+                </div>
             </article>
         </main>
 

@@ -1,4 +1,7 @@
-const getAndPopulateProducts = () => {
+// On exécute la fonction getAndPopulateProducts au chargement de la page
+getAndPopulateProducts();
+
+function getAndPopulateProducts() {
     // Fetch envoie une requête de type GET (par défaut) au back-end qui nous répond la listes des produits
     fetch("http://localhost:3000/api/furniture")
         // Fetch renvoie une promesse, on demande à cette promesse de donner la valeur qu'elle nous a promit avec la fonction .then (une réponse du back-end)
@@ -17,17 +20,17 @@ const getAndPopulateProducts = () => {
         .catch((error) => {
             console.error(error);
         });
-};
+}
 
 // Prend en argument  un tableau qui contient des produits
-const displayProducts = (products) => {
+function displayProducts(products) {
     for (let product of products) {
         displayProduct(product);
     }
-};
+}
 
 // Prend en argument un produit (objet javascript)
-const displayProduct = (product) => {
+function displayProduct(product) {
     //If vérifie que l'argument product a le bon type (c'est à dire qu'il a une propriété name et imageUrl)
     if (product.name === undefined || product.imageUrl === undefined) {
         throw Error(
@@ -43,14 +46,13 @@ const displayProduct = (product) => {
 
     // 2) Remplir ce clone avec les bonnes valeurs récupérer dans le produit (nom et url d'image)
     const name = clonedProduct.querySelector("p");
-    name.innerHTML = product.name;
+    name.textContent = product.name;
     const image = clonedProduct.querySelector("img");
     image.setAttribute("src", product.imageUrl);
+    const link = clonedProduct.querySelector("a");
+    link.setAttribute("href", "product.html?id=" + product._id);
 
     // 3) Trouver la liste de produits (dans la page HTML) et y insérer le clone pour qu'on le voit
     const productsList = document.getElementById("products-list");
     productsList.appendChild(clonedProduct);
-};
-
-// On exécute la fonction getAndPopulateProducts au chargement de la page
-getAndPopulateProducts();
+}
