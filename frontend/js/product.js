@@ -25,6 +25,7 @@ function displayProduct(product) {
     const productDescription = document.getElementById("productDescription");
     const productImage = document.getElementById("productImage");
     const productVarnish = document.getElementById("productVarnish");
+    console.log(product);
 
     productName.textContent = product.name;
     productPrice.textContent = product.price / 100 + "€";
@@ -37,4 +38,14 @@ function displayProduct(product) {
         productOptions.setAttribute("value", varnish);
         productVarnish.appendChild(productOptions);
     }
+
+    const button = document.getElementById("orderButton");
+    button.addEventListener("click", () => {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        if (cart === null) {
+            cart = [];
+        }
+        cart.push(product._id);
+        localStorage.setItem("cart", JSON.stringify(cart));
+    });
 }
