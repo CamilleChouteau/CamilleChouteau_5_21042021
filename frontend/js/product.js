@@ -1,7 +1,7 @@
 // On exécute la fonction getAndPopulateProduct au chargement de la page
 getAndPopulateProduct();
 
-function getAndPopulateProduct() {
+const getAndPopulateProduct = () => {
     // Sur la page d'accueil, on a ajouté l'id à l'url de la page, on retrouve cet id qui a été ajouté à l'url grâce la chaine de requêtes
     // (Partie d'une URL qui transmet des données supplémentaires à une page de destination. Par exemple : ?p_id=42)
     const queryString = window.location.search;
@@ -25,10 +25,10 @@ function getAndPopulateProduct() {
             displayProduct(response);
         });
     // Ici la response est le produit (sous forme d'objet JavaScript)
-}
+};
 
 // Le but de la fonction est de remplir la page avec les infos du produit
-function displayProduct(product) {
+const displayProduct = (product) => {
     // On récupère tous les éléments qu'il va falloir remplir
     const productName = document.getElementById("productName");
     const productPrice = document.getElementById("productPrice");
@@ -77,4 +77,4 @@ function displayProduct(product) {
         // Donc on utilise JSON.strigify pour reconvertir le tableau au format JSON et c'est ce que l'on stocke dans localStorage
         localStorage.setItem("cart", JSON.stringify(cart));
     });
-}
+};

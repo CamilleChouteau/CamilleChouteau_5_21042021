@@ -1,7 +1,7 @@
 // On exécute la fonction getAndPopulateProducts au chargement de la page
 getAndPopulateProducts();
 
-function getAndPopulateProducts() {
+const getAndPopulateProducts = () => {
     // Fetch envoie une requête de type GET (par défaut) au back-end qui nous répond la listes des produits
     fetch("http://localhost:3000/api/furniture")
         // Fetch renvoie une promesse, on demande à cette promesse de donner la valeur qu'elle nous a promit avec la fonction .then (une réponse du back-end)
@@ -20,17 +20,17 @@ function getAndPopulateProducts() {
         .catch((error) => {
             console.error(error);
         });
-}
+};
 
 // Prend en argument  un tableau qui contient des produits
-function displayProducts(products) {
+const displayProducts = (products) => {
     for (let product of products) {
         displayProduct(product);
     }
-}
+};
 
 // Prend en argument un produit (objet javascript)
-function displayProduct(product) {
+const displayProduct = (product) => {
     //If vérifie que l'argument product a le bon type (c'est à dire qu'il a une propriété name et imageUrl)
     if (product.name === undefined || product.imageUrl === undefined) {
         throw Error(
@@ -55,4 +55,4 @@ function displayProduct(product) {
     // 3) Trouver la liste de produits (dans la page HTML) et y insérer le clone pour qu'on le voit
     const productsList = document.getElementById("products-list");
     productsList.appendChild(clonedProduct);
-}
+};
