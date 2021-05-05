@@ -1,6 +1,3 @@
-// On exécute la fonction getAndPopulateProduct au chargement de la page
-getAndPopulateProduct();
-
 const getAndPopulateProduct = () => {
     // Sur la page d'accueil, on a ajouté l'id à l'url de la page, on retrouve cet id qui a été ajouté à l'url grâce la chaine de requêtes
     // (Partie d'une URL qui transmet des données supplémentaires à une page de destination. Par exemple : ?p_id=42)
@@ -78,3 +75,6 @@ const displayProduct = (product) => {
         localStorage.setItem("cart", JSON.stringify(cart));
     });
 };
+
+// On exécute la fonction getAndPopulateProduct au chargement de la page
+getAndPopulateProduct();
