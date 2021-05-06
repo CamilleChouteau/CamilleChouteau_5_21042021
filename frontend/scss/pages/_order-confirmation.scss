@@ -1,0 +1,33 @@
+.confirmation-title {
+    font-family: $font-description;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    text-align: center;
+    padding-top: 1rem;
+    margin: 0rem;
+}
+
+.confirmation-caption {
+    font-family: $font-description;
+    font-size: 1.2rem;
+    padding-bottom: 0.8rem;
+}
+.confirmation-table {
+    border-collapse: collapse;
+    font-family: $font-description;
+    font-size: 1rem;
+    margin: 2rem 0rem 4rem 0rem;
+
+    &__cell {
+        padding: 1rem 0.7rem;
+        border: 1px solid black;
+
+        @include responsive(tablet) {
+            padding: 1rem 2rem;
+        }
+
+        @include responsive(desktop) {
+            padding: 1rem 5rem;
+        }
+    }
+}

@@ -21,13 +21,14 @@
 
         <script src="./js/order-confirmation.js" defer></script>
     </head>
+
     <body>
         <header class="header">
             <a
                 class="header__hyperlink"
                 href="index.html"
                 title="Page d'accueil"
-                >
+            >
                 <h1 class="header__text-logo">Orinoak</h1>
                 <h2 class="header__caption">By Orinoco</h2>
             </a>
@@ -50,12 +51,37 @@
                 >
             </nav>
         </header>
-    </head>
-    <body>
 
-        <header></header>
+        <main class="main">
+            <h3 class="confirmation-title">
+                Orinoak vous remercie de votre commande !
+            </h3>
+            <p></p>
 
-        <main></main>
+            <table class="confirmation-table">
+                <caption class="confirmation-caption">
+                    Récapitulatif de votre commande n°??
+                </caption>
+                <thead>
+                    <tr>
+                        <th class="confirmation-table__cell">Produit</th>
+                        <th class="confirmation-table__cell">Option</th>
+                        <th class="confirmation-table__cell">Prix</th>
+                        <th class="confirmation-table__cell">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="confirmation-table__cell">Cross Table</td>
+                        <td class="confirmation-table__cell">Tan</td>
+                        <td class="confirmation-table__cell">599€</td>
+                        <td rowspan="5" class="confirmation-table__cell">
+                            599€
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
 
         <footer class="footer">
             <div class="social-media-container">
@@ -77,16 +103,12 @@
                     title="Facebook"
                     ><i class="fab fa-facebook-square"></i
                 ></a>
-               
             </div>
             <p class="footer-copyright">Orinoak by Orinoco © Copyright 2021</p>
         </footer>
 
         <section class="menu-mobile">
-            <a
-                class="clickable-icons"
-                href="index.html"
-                title="Page d'accueil"
+            <a class="clickable-icons" href="index.html" title="Page d'accueil"
                 ><i class="fas fa-home"></i
             ></a>
 
