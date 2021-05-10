@@ -2,6 +2,7 @@
     color: black;
     font-size: 3rem;
     transition: all 0.1s;
+    position: relative;
 
     @include responsive("desktop") {
         text-align: center;
@@ -16,11 +17,12 @@
     &--highlighted {
         @extend .clickable-icons;
         color: $color-secondary;
-        border-bottom: 0.2rem $color-secondary solid;
+        border-bottom: 0.15rem $color-secondary solid;
 
-        @include responsive("desktop");
-        border: none;
-        color: black;
+        @include responsive("desktop") {
+            border: none;
+            color: black;
+        }
     }
 
     &--social {

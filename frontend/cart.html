@@ -60,67 +60,82 @@
                 <thead>
                     <tr>
                         <th class="cart-table__cell">Produit</th>
+                        <th class="cart-table__cell">Nom du produit</th>
                         <th class="cart-table__cell">Option</th>
                         <th class="cart-table__cell">Prix</th>
-                        <th class="confirmation-table__cell">Total</th>
                     </tr>
                 </thead>
+
+                <tfoot>
+                    <tr>
+                        <th colspan="3" class="cart-table__cell">Total</th>
+                        <th class="cart-table__cell">599€</th>
+                    </tr>
+                </tfoot>
                 <tbody>
                     <tr>
+                        <td class="cart-table__cell">img</td>
                         <td class="cart-table__cell">Cross Table</td>
                         <td class="cart-table__cell">Tan</td>
                         <td class="cart-table__cell">599€</td>
-                        <td rowspan="5" class="cart-table__cell">599€</td>
                     </tr>
                 </tbody>
             </table>
             <button class="button-cart">Vider le panier</button>
             <div class="divide"></div>
             <section class="form">
-                
-                <label class="label" for="lastname"><i class="icon-cart fa fa-user"></i> Nom</label>
-                <input class="input"
+                <label class="label" for="lastname"
+                    ><i class="icon-cart fa fa-user"></i> Nom</label
+                >
+                <input
+                    class="input"
                     type="text"
                     id="lastname"
                     name="firstname"
                     placeholder="Nom"
                 />
-                <label class="label" for="firstname"><i class="icon-cart fa fa-user"></i> Prénom</label>
-                <input class="input"
+                <label class="label" for="firstname"
+                    ><i class="icon-cart fa fa-user"></i> Prénom</label
+                >
+                <input
+                    class="input"
                     type="text"
                     id="firstname"
                     name="firstname"
                     placeholder="Prénom"
                 />
-                <label class="label" for="email"><i class="icon-cart fa fa-envelope"></i> Email</label>
-                <input class="input"
+                <label class="label" for="email"
+                    ><i class="icon-cart fa fa-envelope"></i> Email</label
+                >
+                <input
+                    class="input"
                     type="text"
                     id="email"
                     name="email"
                     placeholder="Email"
                 />
                 <label class="label" for="address"
-                    ><i class=" icon-cart fa fa-address-card-o"></i> Adresse</label
+                    ><i class="icon-cart fa fa-address-card-o"></i>
+                    Adresse</label
                 >
-                <input class="input"
+                <input
+                    class="input"
                     type="text"
                     id="address"
                     name="address"
                     placeholder="Adresse"
                 />
-                <label class="label" for="postal-code"
-                    ></i> Code postal</label
-                >
-                <input class="input"
+                <label class="label" for="postal-code"> Code postal</label>
+                <input
+                    class="input"
                     type="text"
                     id="postal-code"
                     name="address"
                     placeholder="Code postal"
                 />
-                <label class="label" for="city"
-                    ></i> Ville</label
-                >
-                <input class="input"
+                <label class="label" for="city"> Ville</label>
+                <input
+                    class="input"
                     type="text"
                     id="city"
                     name="address"
@@ -164,8 +179,10 @@
                 class="clickable-icons--highlighted"
                 href="cart.html"
                 title="Panier"
-                ><i class="icon-padding fas fa-shopping-cart"></i
-            ></a>
+            >
+                <i class="icon-padding fas fa-shopping-cart"></i>
+                <span class="cart-number">3</span>
+            </a>
         </section>
     </body>
 </html>

@@ -3,7 +3,7 @@
     padding: 3rem 0rem 1rem 0rem;
     display: flex;
     justify-content: space-around;
-    position: fixed;
+    position: sticky;
     bottom: 0px;
     width: 100%;
 
@@ -38,4 +38,17 @@
             padding-top: 0.7rem;
         }
     }
+}
+
+.cart-number {
+    border-radius: 25px;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    font-family: $font-description;
+    color: $color-primary;
+    background-color: $color-tertiary;
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    border: 2.5px $color-primary solid;
 }
