@@ -52,3 +52,16 @@
     right: -0.5rem;
     border: 2.5px $color-primary solid;
 }
+
+.cart-number-desktop {
+    border-radius: 25px;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    font-family: $font-description;
+    color: black;
+    background-color: $color-secondary;
+    position: absolute;
+    top: -1rem;
+    right: 2rem;
+    border: 3px $color-quaternary solid;
+}
