@@ -19,7 +19,7 @@
         ></script>
         <link rel="stylesheet" href="css/style.min.css" />
 
-        <script src="./js/product.js" defer></script>
+        <script type="module" src="./js/product.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -46,7 +46,7 @@
                         ><p class="menu-desktop__shopping-cart">
                             Shopping cart
                         </p></i
-                    ><span class="cart-number-desktop">3</span></a
+                    ><span class="cart-number cart-number-desktop">0</span></a
                 >
             </nav>
         </header>
@@ -113,12 +113,12 @@
         <section class="menu-mobile">
             <a class="clickable-icons" href="index.html" title="Page d'accueil"
                 ><i class="fas fa-home"></i
-                ><span class="cart-number">3</span></a
-            >
+            ></a>
 
             <a class="clickable-icons" href="cart.html" title="Panier"
                 ><i class="fas fa-shopping-cart"></i
-            ></a>
+                ><span class="cart-number cart-number-mobile">0</span></a
+            >
         </section>
     </body>
 </html>

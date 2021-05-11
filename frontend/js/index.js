@@ -1,3 +1,5 @@
+import { updateCartProductsNumber } from "./helpers/helpers.js";
+
 const getAndPopulateProducts = () => {
     // Fetch envoie une requête de type GET (par défaut) au back-end qui nous répond la listes des produits
     fetch("http://localhost:3000/api/furniture")
@@ -56,3 +58,5 @@ const displayProduct = (product) => {
 
 // On exécute la fonction getAndPopulateProducts au chargement de la page
 getAndPopulateProducts();
+
+updateCartProductsNumber();

@@ -1,3 +1,5 @@
+import { updateCartProductsNumber } from "./helpers/helpers.js";
+
 const getAndPopulateProduct = () => {
     // Sur la page d'accueil, on a ajouté l'id à l'url de la page, on retrouve cet id qui a été ajouté à l'url grâce la chaine de requêtes
     // (Partie d'une URL qui transmet des données supplémentaires à une page de destination. Par exemple : ?p_id=42)
@@ -57,6 +59,7 @@ const displayProduct = (product) => {
     const button = document.getElementById("orderButton");
     // On définie ce qui va être effectuer quand on clique sur le bouton
     button.addEventListener("click", () => {
+        updateCartProductsNumber();
         // Avec localstorage.getItem("cart") on récupère la valeur qui a été stockée dans le localStorage à la clé cart
         // On veut stocker un tableau qui va contenir tous les produits ajoutés au panier dans cette clé (on utilise un tableau pour éviter d'écraser le produit précédent avec le nouveau produit)
         // Le souci est que localStorage ne stocke que des valeurs en string (donc pas de tableau pas d'objet).
@@ -78,3 +81,4 @@ const displayProduct = (product) => {
 
 // On exécute la fonction getAndPopulateProduct au chargement de la page
 getAndPopulateProduct();
+updateCartProductsNumber();
