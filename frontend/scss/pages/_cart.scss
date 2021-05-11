@@ -47,5 +47,10 @@
     margin-bottom: 0.5rem;
 }
 .input {
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+    background-color: $color-primary;
+    border-bottom: $color-quaternary 1px solid;
     margin-bottom: 2rem;
 }
