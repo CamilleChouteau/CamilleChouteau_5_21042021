@@ -1,6 +1,8 @@
+import { getCart } from "./cart.js";
+
 export const updateCartProductsNumber = () => {
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    const numberOfProducts = cart === null ? 0 : cart.length;
+    let cart = getCart();
+    const numberOfProducts = cart.length;
 
     const numbers = document.getElementsByClassName("cart-number");
     for (const number of numbers) {
