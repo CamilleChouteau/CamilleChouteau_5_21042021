@@ -59,28 +59,32 @@ const displayProduct = (product) => {
     const button = document.getElementById("orderButton");
     // On définie ce qui va être effectuer quand on clique sur le bouton
     button.addEventListener("click", () => {
+        const alertVarnish = document.getElementById("alert-varnish");
         if (productVarnish.value === "") {
-            alert("Please choose a varnish");
-        } else {
-            // Avec localstorage.getItem("cart") on récupère la valeur qui a été stockée dans le localStorage à la clé cart
-            // On veut stocker un tableau qui va contenir tous les produits ajoutés au panier dans cette clé (on utilise un tableau pour éviter d'écraser le produit précédent avec le nouveau produit)
-            // Le souci est que localStorage ne stocke que des valeurs en string (donc pas de tableau pas d'objet).
-            // Pour compenser ça, on va stocker le tableau en format JSON (format qui permet de représenter des objets JS sous forme de texte, c'est comme ça que le backend nous envoie ses données)
-            // Comme il est stocké au format JSON, il faut le convertir en tableau pour le manipuler ; Ce qu'on fait avec JSON.parse qui prend en argument du texte en format JSON
-            let cart = JSON.parse(localStorage.getItem("cart"));
-            // Si jamais c'est la première visite de l'utilisateur, aucun tableau n'était stocké à la clé cart = localStorage était vide et donc cart vaut null.
-            // Dans ce cas particulier, on crée un nouveau tableau vide
-            if (cart === null) {
-                cart = [];
-            }
-            // On ajoute au tableau (stocké dans la variable cart et qui représente la panier) l'id du produit que le client souhaite ajouter à son panier
-            cart.push(product._id);
-            // On veut maintenant écraser le tableau précédemment stocké à la clé cart dans localStorage par sa version mise à jour (donc avec le produits en plus)
-            // Donc on utilise JSON.strigify pour reconvertir le tableau au format JSON et c'est ce que l'on stocke dans localStorage
-            localStorage.setItem("cart", JSON.stringify(cart));
-            // On appelle la fonction qui change le numéro de produits qu'il y a dans le panier sur l'icone panier
-            updateCartProductsNumber();
+            alertVarnish.style.display = "block";
+            return;
         }
+        alertVarnish.style.display = "none";
+        // Avec localstorage.getItem("cart") on récupère la valeur qui a été stockée dans le localStorage à la clé cart
+        // On veut stocker un tableau qui va contenir tous les produits ajoutés au panier dans cette clé (on utilise un tableau pour éviter d'écraser le produit précédent avec le nouveau produit)
+        // Le souci est que localStorage ne stocke que des valeurs en string (donc pas de tableau pas d'objet).
+        // Pour compenser ça, on va stocker le tableau en format JSON (format qui permet de représenter des objets JS sous forme de texte, c'est comme ça que le backend nous envoie ses données)
+        // Comme il est stocké au format JSON, il faut le convertir en tableau pour le manipuler ; Ce qu'on fait avec JSON.parse qui prend en argument du texte en format JSON
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        // Si jamais c'est la première visite de l'utilisateur, aucun tableau n'était stocké à la clé cart = localStorage était vide et donc cart vaut null.
+        // Dans ce cas particulier, on crée un nouveau tableau vide
+        if (cart === null) {
+            cart = [];
+        }
+        // On ajoute au tableau (stocké dans la variable cart et qui représente la panier) l'id du produit que le client souhaite ajouter à son panier
+        cart.push(product._id);
+        // On veut maintenant écraser le tableau précédemment stocké à la clé cart dans localStorage par sa version mise à jour (donc avec le produits en plus)
+        // Donc on utilise JSON.strigify pour reconvertir le tableau au format JSON et c'est ce que l'on stocke dans localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+        // On appelle la fonction qui change le numéro de produits qu'il y a dans le panier sur l'icone panier
+        updateCartProductsNumber();
+        // Redirige vers le panier quand un article est ajouté
+        window.location.href = "cart.html";
     });
 };
 
