@@ -1,5 +1,6 @@
 import { updateCartProductsNumber } from "./helpers/helpers.js";
 import { getCart, saveCart } from "./helpers/cart.js";
+import { findProduct } from "./helpers/product.js";
 
 const getAndPopulateProduct = () => {
     // Sur la page d'accueil, on a ajouté l'id à l'url de la page, on retrouve cet id qui a été ajouté à l'url grâce la chaine de requêtes
@@ -16,14 +17,13 @@ const getAndPopulateProduct = () => {
     // On a l'id du produit (transmis depuis la page index), mais pas les autres infos
     // Pour les récupérer on doit les demander au backend avec un fetch
     // À la différence de la page index, on ne demande pas tous les produits mais un seul
-    fetch("http://localhost:3000/api/furniture/" + productId)
-        .then((httpResponse) => {
-            return httpResponse.json();
-        })
+    // On a une fonction utilitaire findProduct (dans helpers/product.js) qui fait ça pour nous
+    // elle prend l'id du produit en argument, et (de façon asynchrone) nous renvoie le produit donné par le backend
+    // comme c'est asynchrone (car elle contacte le backend), on doit utiliser then pour attendre son résultat (le produit)
+    findProduct(productId).then((product) => {
+        displayProduct(product);
+    });
 
-        .then((response) => {
-            displayProduct(response);
-        });
     // Ici la response est le produit (sous forme d'objet JavaScript)
 };
 
