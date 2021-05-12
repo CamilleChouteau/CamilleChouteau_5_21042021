@@ -1,24 +1,29 @@
 import { updateCartProductsNumber } from "./helpers/helpers.js";
+import { requestBackend } from "./helpers/product.js";
 
 const getAndPopulateProducts = () => {
-    // Fetch envoie une requête de type GET (par défaut) au back-end qui nous répond la listes des produits
-    fetch("http://localhost:3000/api/furniture")
-        // Fetch renvoie une promesse, on demande à cette promesse de donner la valeur qu'elle nous a promit avec la fonction .then (une réponse du back-end)
-        // Comme la promesse va mettre un certain temps (indéterminé) à répondre à notre demande (puisqu'elle est asynchrone),
-        // On doit lui donner un moyen de nous communiquer la valeur promise
-        // Pour cela on lui donne une fonction. Cette fonction prend un argument qui sera ce que va lui donner la promesse (la valeur attendue)
-        // Et la promesse appelera cette fonction quand elle aura le résultat,
-        // En lui donnant le résultat qui sera stocké en argument httpResponse
+    // // Fetch envoie une requête de type GET (par défaut) au back-end qui nous répond la listes des produits
+    // fetch("http://localhost:3000/api/furniture")
+    //     // Fetch renvoie une promesse, on demande à cette promesse de donner la valeur qu'elle nous a promit avec la fonction .then (une réponse du back-end)
+    //     // Comme la promesse va mettre un certain temps (indéterminé) à répondre à notre demande (puisqu'elle est asynchrone),
+    //     // On doit lui donner un moyen de nous communiquer la valeur promise
+    //     // Pour cela on lui donne une fonction. Cette fonction prend un argument qui sera ce que va lui donner la promesse (la valeur attendue)
+    //     // Et la promesse appelera cette fonction quand elle aura le résultat,
+    //     // En lui donnant le résultat qui sera stocké en argument httpResponse
 
-        .then((httpResponse) => {
-            return httpResponse.json();
-        })
-        .then((response) => {
-            displayProducts(response);
-        })
-        .catch((error) => {
-            console.error(error);
-        });
+    //     .then((httpResponse) => {
+    //         return httpResponse.json();
+    //     })
+    //     .then((response) => {
+    //         displayProducts(response);
+    //     })
+    //     .catch((error) => {
+    //         console.error(error);
+    //     });
+
+    requestBackend().then((products) => {
+        displayProducts(products);
+    });
 };
 
 // Prend en argument  un tableau qui contient des produits
