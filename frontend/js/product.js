@@ -68,8 +68,12 @@ const displayProduct = (product) => {
         alertVarnish.style.display = "none";
         // On appelle la fonction getCart qui est dans le fichier cart.js dans le dossier helpers
         const cart = getCart();
+        const savedProduct = {
+            id: product._id,
+            varnish: productVarnish.value,
+        };
         // On ajoute au tableau (stocké dans la variable cart et qui représente la panier) l'id du produit que le client souhaite ajouter à son panier
-        cart.push(product._id);
+        cart.push(savedProduct);
         // On appelle la fonction saveCart qui est dans le fichier cart.js dans le dossier helpers
         // On donne en argument cart pour pouvoir enregistrer le panier
         saveCart(cart);

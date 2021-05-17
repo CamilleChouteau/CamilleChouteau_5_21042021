@@ -72,15 +72,27 @@
                         <th class="cart-table__cell">599€</th>
                     </tr>
                 </tfoot>
-                <tbody>
-                    <tr>
-                        <td class="cart-table__cell">img</td>
-                        <td class="cart-table__cell">Cross Table</td>
-                        <td class="cart-table__cell">Tan</td>
-                        <td class="cart-table__cell">599€</td>
-                    </tr>
+
+                <tbody id="tableProducts">
+                    <template id="product-template">
+                        <tr>
+                            <td class="cart-table__cell">
+                                <img id="productImage" />
+                            </td>
+                            <td id="productName" class="cart-table__cell">
+                                Cross Table
+                            </td>
+                            <td id="productVarnish" class="cart-table__cell">
+                                Tan
+                            </td>
+                            <td id="productPrice" class="cart-table__cell">
+                                599€
+                            </td>
+                        </tr>
+                    </template>
                 </tbody>
             </table>
+
             <button class="button-cart">Clear shopping cart</button>
             <div class="divide"></div>
             <section class="form">
