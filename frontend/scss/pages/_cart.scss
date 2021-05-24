@@ -10,21 +10,58 @@
 .cart-table {
     font-family: $font-description;
     width: 100%;
-    &__grid {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr 1fr;
-        align-items: stretch;
-    }
-
-    &__cell {
-        border: $color-quaternary 0.1rem solid;
-        padding: 0.9rem;
-    }
-    &__total-label {
-        grid-column-end: span 3;
-    }
 }
 
+.cart-product {
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    grid-template-rows: 10rem;
+    column-gap: 1rem;
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+    background-color: #fff9f4;
+    box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    border-radius: 0.3rem;
+
+    &__image-container {
+        width: 8rem;
+    }
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__informations {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0rem;
+    }
+
+    &__delete-button-container {
+        margin-top: auto;
+    }
+
+    &__delete-button {
+        border: $color-quaternary 0.1rem solid;
+        border-radius: 0.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.5rem;
+        height: 1.5rem;
+        color: $color-tertiary;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__price {
+        padding: 1rem 0rem;
+    }
+}
 .icon-cart {
     color: $color-secondary;
     font-size: 1.5rem;

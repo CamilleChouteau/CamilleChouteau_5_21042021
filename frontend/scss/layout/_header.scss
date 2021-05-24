@@ -3,6 +3,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    width: 100%;
     @include responsive("desktop") {
         justify-content: space-between;
     }

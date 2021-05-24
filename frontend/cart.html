@@ -55,32 +55,42 @@
         <main class="main">
             <h1>Your Shopping Cart</h1>
             <div class="cart-table">
-                <div class="cart-table__grid cart-table__headings">
-                    <div class="cart-table__heading cart-table__cell">
-                        Product
-                    </div>
-                    <div class="cart-table__heading cart-table__cell">
-                        Product name
-                    </div>
-                    <div class="cart-table__heading cart-table__cell">
-                        Varnish
-                    </div>
-                    <div class="cart-table__heading cart-table__cell">
-                        Price
-                    </div>
-                </div>
-
                 <div
                     id="tableProducts"
                     class="cart-table__grid cart-table__body"
                 >
                     <template id="product-template">
-                        <div class="cart-table__cell">
-                            <img id="productImage" class="cart-table__image" />
+                        <div class="cart-product">
+                            <div class="cart-product__image-container">
+                                <img
+                                    id="productImage"
+                                    class="cart-product__image"
+                                />
+                            </div>
+                            <div class="cart-product__informations">
+                                <div
+                                    id="productName"
+                                    class="cart-product__name"
+                                ></div>
+                                <div
+                                    id="productVarnish"
+                                    class="cart-product__varnish"
+                                ></div>
+                                <div
+                                    class="
+                                        cart-product__delete-button-container
+                                    "
+                                >
+                                    <a class="cart-product__delete-button"
+                                        ><i class="far fa-trash-alt"></i
+                                    ></a>
+                                </div>
+                            </div>
+                            <div
+                                id="productPrice"
+                                class="cart-product__price"
+                            ></div>
                         </div>
-                        <div id="productName" class="cart-table__cell"></div>
-                        <div id="productVarnish" class="cart-table__cell"></div>
-                        <div id="productPrice" class="cart-table__cell"></div>
                     </template>
                 </div>
 
