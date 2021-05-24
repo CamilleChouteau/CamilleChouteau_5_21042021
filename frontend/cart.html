@@ -53,14 +53,14 @@
         </header>
 
         <main class="main">
-            <h1>Your Shopping Cart</h1>
             <div class="cart-table">
+                <h1 class="cart-table__title">Your Shopping Cart</h1>
                 <div
                     id="tableProducts"
                     class="cart-table__grid cart-table__body"
                 >
                     <template id="product-template">
-                        <div class="cart-product">
+                        <div id="productContainer" class="cart-product">
                             <div class="cart-product__image-container">
                                 <img
                                     id="productImage"
@@ -81,7 +81,9 @@
                                         cart-product__delete-button-container
                                     "
                                 >
-                                    <a class="cart-product__delete-button"
+                                    <a
+                                        id="productDeleteButton"
+                                        class="cart-product__delete-button"
                                         ><i class="far fa-trash-alt"></i
                                     ></a>
                                 </div>
@@ -95,19 +97,21 @@
                 </div>
 
                 <div class="cart-table__grid cart-table__footer">
-                    <div
-                        id="totalLabel"
-                        class="cart-table__total-label cart-table__cell"
-                    >
+                    <div class="cart-table__total-label cart-table__cell">
                         Total
                     </div>
-                    <div class="cart-table__total-value cart-table__cell">
+                    <div
+                        id="totalPrice"
+                        class="cart-table__total-value cart-table__cell"
+                    >
                         599€
                     </div>
                 </div>
             </div>
 
-            <button class="button-cart">Clear shopping cart</button>
+            <button id="clearCartButton" class="button-cart">
+                Clear shopping cart
+            </button>
             <div class="divide"></div>
             <section class="form">
                 <label class="label" for="lastname"

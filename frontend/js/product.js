@@ -1,5 +1,5 @@
 import { updateCartProductsNumber } from "./helpers/helpers.js";
-import { getCart, saveCart } from "./helpers/cart.js";
+import { addProductToCart } from "./helpers/cart.js";
 import { findProduct } from "./helpers/product.js";
 
 const getAndPopulateProduct = () => {
@@ -66,17 +66,7 @@ const displayProduct = (product) => {
             return;
         }
         alertVarnish.style.display = "none";
-        // On appelle la fonction getCart qui est dans le fichier cart.js dans le dossier helpers
-        const cart = getCart();
-        const savedProduct = {
-            id: product._id,
-            varnish: productVarnish.value,
-        };
-        // On ajoute au tableau (stocké dans la variable cart et qui représente la panier) l'id du produit que le client souhaite ajouter à son panier
-        cart.push(savedProduct);
-        // On appelle la fonction saveCart qui est dans le fichier cart.js dans le dossier helpers
-        // On donne en argument cart pour pouvoir enregistrer le panier
-        saveCart(cart);
+        addProductToCart(product);
         // On appelle la fonction qui change le numéro de produits qu'il y a dans le panier sur l'icone panier
         updateCartProductsNumber();
         // Redirige vers le panier quand un article est ajouté

@@ -1,20 +1,45 @@
 import { updateCartProductsNumber } from "./helpers/helpers.js";
-import { getCart, saveCart } from "./helpers/cart.js";
+import {
+    emptyCart,
+    getCart,
+    removeProductFromCart,
+    saveCart,
+} from "./helpers/cart.js";
 import { findProduct } from "./helpers/product.js";
 
-const cart = getCart();
-for (const savedProduct of cart) {
-    findProduct(savedProduct.id).then((product) => {
+const updateTotalPrice = async () => {
+    const cart = getCart();
+    let totalPrice = 0;
+
+    for (const savedProduct of cart) {
+        const product = await findProduct(savedProduct.id);
+        totalPrice += product.price;
+    }
+
+    const totalPriceDiv = document.getElementById("totalPrice");
+    totalPriceDiv.textContent = totalPrice / 100 + "€";
+};
+
+const fillCartSummary = async () => {
+    const cart = getCart();
+
+    for (const savedProduct of cart) {
+        const product = await findProduct(savedProduct.id);
         const originalProduct = document.getElementById("product-template");
         const clonedProduct = document.importNode(
             originalProduct.content,
             true
         );
 
+        const productContainer =
+            clonedProduct.getElementById("productContainer");
         const productImage = clonedProduct.getElementById("productImage");
         const productName = clonedProduct.getElementById("productName");
         const productVarnish = clonedProduct.getElementById("productVarnish");
         const productPrice = clonedProduct.getElementById("productPrice");
+        const productDeleteButton = clonedProduct.getElementById(
+            "productDeleteButton"
+        );
 
         productImage.setAttribute("src", product.imageUrl);
         productName.textContent = product.name;
@@ -23,7 +48,28 @@ for (const savedProduct of cart) {
 
         const tableProducts = document.getElementById("tableProducts");
         tableProducts.appendChild(clonedProduct);
-    });
-}
 
+        productDeleteButton.addEventListener("click", () => {
+            removeProductFromCart(savedProduct);
+            tableProducts.removeChild(productContainer);
+            updateCartProductsNumber();
+            updateTotalPrice();
+        });
+    }
+};
+
+const setupClearCartButton = () => {
+    const clearCartButton = document.getElementById("clearCartButton");
+    clearCartButton.addEventListener("click", () => {
+        emptyCart();
+        const tableProducts = document.getElementById("tableProducts");
+        tableProducts.innerHTML = "";
+        updateCartProductsNumber();
+        updateTotalPrice();
+    });
+};
+
+fillCartSummary();
+updateTotalPrice();
+setupClearCartButton();
 updateCartProductsNumber();

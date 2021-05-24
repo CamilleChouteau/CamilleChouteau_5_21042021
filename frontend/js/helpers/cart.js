@@ -18,3 +18,42 @@ export const saveCart = (cart) => {
     // Donc on utilise JSON.strigify pour reconvertir le tableau au format JSON et c'est ce que l'on stocke dans localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 };
+
+export const addProductToCart = (product) => {
+    // On appelle la fonction getCart qui est dans le fichier cart.js dans le dossier helpers
+    const cart = getCart();
+    const savedProduct = {
+        id: product._id,
+        varnish: productVarnish.value,
+    };
+    // On ajoute au tableau (stocké dans la variable cart et qui représente la panier) l'id du produit que le client souhaite ajouter à son panier
+    cart.push(savedProduct);
+    // On appelle la fonction saveCart qui est dans le fichier cart.js dans le dossier helpers
+    // On donne en argument cart pour pouvoir enregistrer le panier
+    saveCart(cart);
+};
+
+export const removeProductFromCart = (savedProduct) => {
+    const cart = getCart();
+    let index = -1;
+    for (let i = 0; i < cart.length; i++) {
+        const product = cart[i];
+        if (
+            product.id === savedProduct.id &&
+            product.varnish === savedProduct.varnish
+        ) {
+            index = i;
+            break;
+        }
+    }
+    if (index === -1) {
+        console.error("Product isn't in the cart");
+        return;
+    }
+    cart.splice(index, 1);
+    saveCart(cart);
+};
+
+export const emptyCart = () => {
+    saveCart([]);
+};
