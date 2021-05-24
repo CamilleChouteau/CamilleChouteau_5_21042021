@@ -8,32 +8,20 @@
 }
 
 .cart-table {
-    border-collapse: collapse;
     font-family: $font-description;
-    font-size: 1rem;
-    width: 80%;
-
-    &__image-cell {
-        max-width: 10rem;
+    width: 100%;
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+        align-items: stretch;
     }
 
     &__cell {
-        padding: 1rem 0.4rem;
-        border: 1px solid black;
-
-        // @include responsive(tablet) {
-        //     padding: 1rem 2rem;
-        // }
-
-        // @include responsive(desktop) {
-        //     padding: 1rem 5rem;
-        // }
+        border: $color-quaternary 0.1rem solid;
+        padding: 0.9rem;
     }
-
-    &__image {
-        height: 10rem;
-        // width: 100%;
-        // object-fit: cover;
+    &__total-label {
+        grid-column-end: span 3;
     }
 }
 
