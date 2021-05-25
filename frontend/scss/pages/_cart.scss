@@ -104,6 +104,9 @@
     display: flex;
     flex-direction: column;
     font-family: $font-description;
+    @include responsive("desktop") {
+        margin: 6rem 4rem 0rem 0rem;
+    }
 }
 
 .divide {
@@ -111,6 +114,9 @@
     height: 0.1rem;
     width: 25rem;
     margin: 2rem 0rem;
+    @include responsive("desktop") {
+        display: none;
+    }
 }
 .label {
     margin-bottom: 0.5rem;
@@ -129,4 +135,14 @@
     color: red;
     margin: 0.3rem 0rem;
     display: none;
+}
+
+.main-cart-desktop {
+    @include responsive("desktop") {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        column-gap: 4rem;
+        align-items: flex-start;
+        margin-top: 1rem;
+    }
 }
