@@ -6,6 +6,7 @@ import {
     saveCart,
 } from "./helpers/cart.js";
 import { findProduct } from "./helpers/product.js";
+import { validateEmail, validatePostalCode } from "./helpers/forms.js";
 
 const updateTotalPrice = async () => {
     const cart = getCart();
@@ -69,7 +70,29 @@ const setupClearCartButton = () => {
     });
 };
 
+const setupFormValidator = () => {
+    const emailInput = document.getElementById("email");
+    const postalCodeInput = document.getElementById("postalCode");
+    emailInput.addEventListener("focusout", () => {
+        const isValid = validateEmail(emailInput.value);
+        if (isValid) {
+            console.log("Email valid");
+        } else {
+            console.log("Email invalid");
+        }
+    });
+    postalCodeInput.addEventListener("focusout", () => {
+        const isValid = validatePostalCode(postalCodeInput.value);
+        if (isValid) {
+            console.log("Postal code valid");
+        } else {
+            console.log("Postal code invalid");
+        }
+    });
+};
+
 fillCartSummary();
 updateTotalPrice();
 setupClearCartButton();
+setupFormValidator();
 updateCartProductsNumber();

@@ -123,6 +123,7 @@
                     id="lastname"
                     name="firstname"
                     placeholder="Doe"
+                    required
                 />
                 <label class="label" for="firstname"
                     ><i class="icon-cart fa fa-user"></i> First Name</label
@@ -133,16 +134,19 @@
                     id="firstname"
                     name="firstname"
                     placeholder="Jane"
+                    required
                 />
                 <label class="label" for="email"
                     ><i class="icon-cart fa fa-envelope"></i> Email</label
                 >
+                <p>Email adress is not valid</p>
                 <input
                     class="input"
-                    type="text"
+                    type="email"
                     id="email"
                     name="email"
                     placeholder="Email"
+                    required
                 />
                 <label class="label" for="address"
                     ><i class="icon-cart fa fa-address-card-o"></i>
@@ -154,14 +158,17 @@
                     id="address"
                     name="address"
                     placeholder="Adress"
+                    required
                 />
-                <label class="label" for="postal-code"> Postal code</label>
+                <label class="label" for="postalCode"> Postal code</label>
+                <p>Postal code is not valid</p>
                 <input
                     class="input"
-                    type="text"
-                    id="postal-code"
+                    type="number"
+                    id="postalCode"
                     name="address"
                     placeholder="Postal code"
+                    required
                 />
                 <label class="label" for="city"> City</label>
                 <input
@@ -170,6 +177,7 @@
                     id="city"
                     name="address"
                     placeholder="City"
+                    required
                 />
 
                 <button class="button-cart">Order</button>
