@@ -13,3 +13,21 @@ export const requestBackend = async (endpoint = "") => {
     const response = await httpResponse.json();
     return response;
 };
+
+export const order = async (contact, productsIds) => {
+    const httpResponse = await fetch(
+        "http://localhost:3000/api/furniture/order",
+        {
+            method: "post",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({
+                contact: contact,
+                products: productsIds,
+            }),
+        }
+    );
+    const response = await httpResponse.json();
+    return response.orderId;
+};

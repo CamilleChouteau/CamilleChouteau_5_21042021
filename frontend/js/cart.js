@@ -5,7 +5,7 @@ import {
     removeProductFromCart,
     saveCart,
 } from "./helpers/cart.js";
-import { findProduct } from "./helpers/product.js";
+import { findProduct, order } from "./helpers/product.js";
 import { validateEmail, validatePostalCode } from "./helpers/forms.js";
 
 const updateTotalPrice = async () => {
@@ -79,19 +79,66 @@ const setupFormValidator = () => {
         const isValid = validateEmail(emailInput.value);
         if (isValid) {
             emailInvalid.style.display = "none";
+            emailInput.classList.remove("invalid-input");
         } else {
             emailInvalid.style.display = "block";
-            emailInput.style.border = "red 1px solid";
+            emailInput.classList.add("invalid-input");
         }
     });
     postalCodeInput.addEventListener("focusout", () => {
         const isValid = validatePostalCode(postalCodeInput.value);
         if (isValid) {
             postalCodeInvalid.style.display = "none";
+            postalCodeInput.classList.remove("invalid-input");
         } else {
             postalCodeInvalid.style.display = "block";
-            postalCodeInput.style.border = "red 1px solid";
+            postalCodeInput.classList.add("invalid-input");
         }
+    });
+};
+
+const setupOrderButton = () => {
+    const lastNameInput = document.getElementById("lastname");
+    const firstNameInput = document.getElementById("firstname");
+    const emailInput = document.getElementById("email");
+    const addressInput = document.getElementById("address");
+    const postalCodeInput = document.getElementById("postalCode");
+    const cityInput = document.getElementById("city");
+    const orderButton = document.getElementById("orderButton");
+
+    orderButton.addEventListener("click", async () => {
+        if (
+            lastNameInput.value.length === 0 ||
+            firstNameInput.value.length === 0 ||
+            validateEmail(emailInput.value) === false ||
+            addressInput.value.length === 0 ||
+            validatePostalCode(postalCodeInput.value) === false ||
+            cityInput.value.length === 0
+        ) {
+            alert("Please fill the contact informations");
+            return;
+        }
+        const contact = {
+            firstName: firstNameInput.value,
+            lastName: lastNameInput.value,
+            email: emailInput.value,
+            address: addressInput.value,
+            city: cityInput.value,
+        };
+
+        const cart = getCart();
+        const productsIds = [];
+        for (const savedProduct of cart) {
+            productsIds.push(savedProduct.id);
+        }
+
+        const orderId = await order(contact, productsIds);
+        emptyCart();
+        window.location.href =
+            "order_confirmation.html?orderId=" +
+            orderId +
+            "&firstName=" +
+            contact.firstName;
     });
 };
 
@@ -99,4 +146,5 @@ fillCartSummary();
 updateTotalPrice();
 setupClearCartButton();
 setupFormValidator();
+setupOrderButton();
 updateCartProductsNumber();
