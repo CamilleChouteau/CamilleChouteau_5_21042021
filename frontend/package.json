@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "sass" : "sass --watch scss/styles.scss css/style.min.css --style compressed"
+    "sass": "sass --watch scss/styles.scss css/style.min.css --style compressed"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.34.0"
+  }
 }
