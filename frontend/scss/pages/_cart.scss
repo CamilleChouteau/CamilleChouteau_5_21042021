@@ -10,6 +10,8 @@
 .cart-table {
     font-family: $font-description;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 
     &__title {
         font-size: 1.3rem;
@@ -120,4 +122,11 @@
     background-color: $color-primary;
     border-bottom: $color-quaternary 1px solid;
     margin-bottom: 2rem;
+}
+
+.invalid-input-info {
+    font-size: 0.8rem;
+    color: red;
+    margin: 0.3rem 0rem;
+    display: none;
 }

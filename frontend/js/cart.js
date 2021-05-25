@@ -73,20 +73,24 @@ const setupClearCartButton = () => {
 const setupFormValidator = () => {
     const emailInput = document.getElementById("email");
     const postalCodeInput = document.getElementById("postalCode");
+    const emailInvalid = document.getElementById("emailInvalid");
+    const postalCodeInvalid = document.getElementById("postalCodeInvalid");
     emailInput.addEventListener("focusout", () => {
         const isValid = validateEmail(emailInput.value);
         if (isValid) {
-            console.log("Email valid");
+            emailInvalid.style.display = "none";
         } else {
-            console.log("Email invalid");
+            emailInvalid.style.display = "block";
+            emailInput.style.border = "red 1px solid";
         }
     });
     postalCodeInput.addEventListener("focusout", () => {
         const isValid = validatePostalCode(postalCodeInput.value);
         if (isValid) {
-            console.log("Postal code valid");
+            postalCodeInvalid.style.display = "none";
         } else {
-            console.log("Postal code invalid");
+            postalCodeInvalid.style.display = "block";
+            postalCodeInput.style.border = "red 1px solid";
         }
     });
 };

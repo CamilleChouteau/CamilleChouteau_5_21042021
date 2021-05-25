@@ -37,7 +37,7 @@
 
 // Bouton "vider le panier" et "commander"
 
-.button-cart {
+.order-button {
     font-family: $font-description;
     font-size: 1rem;
     padding: 0.8rem 2rem;
@@ -49,6 +49,23 @@
 
     &:hover {
         background-color: $color-quaternary;
+        transform: scale(1.04);
+    }
+}
+
+.clear-cart-button {
+    font-family: $font-description;
+    border: none;
+    background-color: $color-quaternary;
+    border-radius: 1.88rem;
+    color: $color-tertiary;
+    padding: 0.35rem 0.6rem;
+    align-self: flex-end;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
         transform: scale(1.04);
     }
 }

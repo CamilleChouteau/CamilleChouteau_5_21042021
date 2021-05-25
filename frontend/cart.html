@@ -55,6 +55,9 @@
         <main class="main">
             <div class="cart-table">
                 <h1 class="cart-table__title">Your Shopping Cart</h1>
+                <button id="clearCartButton" class="clear-cart-button">
+                    Clear shopping cart
+                </button>
                 <div
                     id="tableProducts"
                     class="cart-table__grid cart-table__body"
@@ -109,9 +112,6 @@
                 </div>
             </div>
 
-            <button id="clearCartButton" class="button-cart">
-                Clear shopping cart
-            </button>
             <div class="divide"></div>
             <section class="form">
                 <label class="label" for="lastname"
@@ -139,7 +139,9 @@
                 <label class="label" for="email"
                     ><i class="icon-cart fa fa-envelope"></i> Email</label
                 >
-                <p>Email adress is not valid</p>
+                <p id="emailInvalid" class="invalid-input-info">
+                    Email adress is not valid
+                </p>
                 <input
                     class="input"
                     type="email"
@@ -161,7 +163,9 @@
                     required
                 />
                 <label class="label" for="postalCode"> Postal code</label>
-                <p>Postal code is not valid</p>
+                <p id="postalCodeInvalid" class="invalid-input-info">
+                    Postal code is not valid
+                </p>
                 <input
                     class="input"
                     type="number"
@@ -180,7 +184,7 @@
                     required
                 />
 
-                <button class="button-cart">Order</button>
+                <button class="order-button">Order</button>
             </section>
         </main>
 
