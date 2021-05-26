@@ -54,9 +54,26 @@
 
         <main class="main">
             <h3 class="confirmation-title">
-                Thank you <span id="customerName"></span> for your order!
+                Hey <span id="customerName"></span>! Thanks for shopping with
+                Orinoak!
             </h3>
-            <p>Order n°<span id="orderNumber"></span></p>
+            <p class="order-number-info">
+                Your order number is
+                <span id="orderNumber" class="order-number"></span>
+            </p>
+            <p class="ship-info">
+                Your purchase will be shipped
+                <span class="info-style">in the next 24 hours.</span> Once it
+                ships, you will receive a
+                <span class="info-style">confirmation email</span> with your
+                tracking number.
+            </p>
+            <p class="cancel-order-info">
+                <span class="cancel-info">Changed your mind ?</span> We're not
+                able to make changes to your order, but you do have the option
+                to <a class="cancel-info__hyperlink" href="#">cancel it</a>
+                <span class="cancel-info">within 1 hour.</span>
+            </p>
         </main>
 
         <footer class="footer">

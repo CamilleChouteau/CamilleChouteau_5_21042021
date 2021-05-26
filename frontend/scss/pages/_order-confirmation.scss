@@ -4,30 +4,47 @@
     font-weight: lighter;
     text-align: center;
     padding-top: 1rem;
-    margin: 0rem;
+    margin: 1rem;
 }
 
-.confirmation-caption {
-    font-family: $font-description;
-    font-size: 1.2rem;
-    padding-bottom: 0.8rem;
-}
-.confirmation-table {
-    border-collapse: collapse;
+.order-number-info {
     font-family: $font-description;
     font-size: 1rem;
-    margin: 2rem 0rem 4rem 0rem;
+    font-weight: lighter;
+    text-align: center;
+    padding-top: 1rem;
+    margin: 3rem;
+}
 
-    &__cell {
-        padding: 1rem 0.7rem;
-        border: 1px solid black;
+.order-number {
+    color: $color-secondary;
+}
 
-        @include responsive(tablet) {
-            padding: 1rem 2rem;
-        }
+.ship-info {
+    font-family: $font-description;
+    font-size: 1rem;
+    font-weight: lighter;
+    text-align: center;
+    padding-top: 1rem;
+    margin: 0rem 4rem;
+}
+.cancel-order-info {
+    font-family: $font-description;
+    font-size: 1rem;
+    font-weight: lighter;
+    text-align: center;
+    padding-top: 0.8rem;
+    margin: 6rem 6rem 3rem 6rem;
+}
 
-        @include responsive(desktop) {
-            padding: 1rem 5rem;
-        }
+.info-style {
+    color: $color-secondary;
+}
+
+.cancel-info {
+    color: $color-secondary;
+
+    &__hyperlink {
+        color: indianred;
     }
 }
