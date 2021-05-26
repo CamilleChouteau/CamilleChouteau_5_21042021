@@ -1,10 +1,5 @@
 import { updateCartProductsNumber } from "./helpers/helpers.js";
-import {
-    emptyCart,
-    getCart,
-    removeProductFromCart,
-    saveCart,
-} from "./helpers/cart.js";
+import { emptyCart, getCart, removeProductFromCart } from "./helpers/cart.js";
 import { findProduct, order } from "./helpers/product.js";
 import { validateEmail, validatePostalCode } from "./helpers/forms.js";
 
