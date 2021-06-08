@@ -3,9 +3,11 @@ import { emptyCart, getCart, removeProductFromCart } from "./helpers/cart.js";
 import { findProduct, order } from "./helpers/product.js";
 import { validateEmail, validatePostalCode } from "./helpers/forms.js";
 
+let totalPrice = 0;
+
 const updateTotalPrice = async () => {
     const cart = getCart();
-    let totalPrice = 0;
+    totalPrice = 0;
 
     for (const savedProduct of cart) {
         const product = await findProduct(savedProduct.id);
@@ -133,7 +135,9 @@ const setupOrderButton = () => {
             "order_confirmation.html?orderId=" +
             orderId +
             "&firstName=" +
-            contact.firstName;
+            contact.firstName +
+            "&totalPrice=" +
+            totalPrice;
     });
 };
 
