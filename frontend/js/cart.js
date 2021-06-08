@@ -1,7 +1,12 @@
 import { updateCartProductsNumber } from "./helpers/helpers.js";
 import { emptyCart, getCart, removeProductFromCart } from "./helpers/cart.js";
 import { findProduct, order } from "./helpers/product.js";
-import { validateEmail, validatePostalCode } from "./helpers/forms.js";
+import {
+    validateAddress,
+    validateEmail,
+    validatePostalCode,
+    validateRegularName,
+} from "./helpers/forms.js";
 
 let totalPrice = 0;
 
@@ -67,31 +72,28 @@ const setupClearCartButton = () => {
     });
 };
 
+const setupFieldValidator = (inputId, invalidTextId, validator) => {
+    const input = document.getElementById(inputId);
+    const invalidText = document.getElementById(invalidTextId);
+    input.addEventListener("focusout", () => {
+        const isValid = validator(input.value);
+        if (isValid) {
+            invalidText.style.display = "none";
+            input.classList.remove("invalid-input");
+        } else {
+            invalidText.style.display = "block";
+            input.classList.add("invalid-input");
+        }
+    });
+};
+
 const setupFormValidator = () => {
-    const emailInput = document.getElementById("email");
-    const postalCodeInput = document.getElementById("postalCode");
-    const emailInvalid = document.getElementById("emailInvalid");
-    const postalCodeInvalid = document.getElementById("postalCodeInvalid");
-    emailInput.addEventListener("focusout", () => {
-        const isValid = validateEmail(emailInput.value);
-        if (isValid) {
-            emailInvalid.style.display = "none";
-            emailInput.classList.remove("invalid-input");
-        } else {
-            emailInvalid.style.display = "block";
-            emailInput.classList.add("invalid-input");
-        }
-    });
-    postalCodeInput.addEventListener("focusout", () => {
-        const isValid = validatePostalCode(postalCodeInput.value);
-        if (isValid) {
-            postalCodeInvalid.style.display = "none";
-            postalCodeInput.classList.remove("invalid-input");
-        } else {
-            postalCodeInvalid.style.display = "block";
-            postalCodeInput.classList.add("invalid-input");
-        }
-    });
+    setupFieldValidator("lastname", "lastNameInvalid", validateRegularName);
+    setupFieldValidator("firstname", "firstNameInvalid", validateRegularName);
+    setupFieldValidator("email", "emailInvalid", validateEmail);
+    setupFieldValidator("address", "addressInvalid", validateAddress);
+    setupFieldValidator("postalCode", "postalCodeInvalid", validatePostalCode);
+    setupFieldValidator("city", "cityInvalid", validateRegularName);
 };
 
 const setupOrderButton = () => {
@@ -105,12 +107,12 @@ const setupOrderButton = () => {
 
     orderButton.addEventListener("click", async () => {
         if (
-            lastNameInput.value.length === 0 ||
-            firstNameInput.value.length === 0 ||
+            validateRegularName(lastNameInput.value) === false ||
+            validateRegularName(firstNameInput.value) === false ||
             validateEmail(emailInput.value) === false ||
-            addressInput.value.length === 0 ||
+            validateAddress(addressInput.value) === false ||
             validatePostalCode(postalCodeInput.value) === false ||
-            cityInput.value.length === 0
+            validateRegularName(cityInput.value) === false
         ) {
             alert("Please fill the contact informations");
             return;
