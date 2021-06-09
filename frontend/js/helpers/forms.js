@@ -1,6 +1,6 @@
 const emailRegex = /^[a-zA-Z0-9.-_]+@[a-zA-Z0-9.-_]+\.[a-zA-Z]{2,6}$/;
-const regularNameRegex = /^[a-zA-Z'-]+$/;
-const addressRegex = /^[a-zA-Z0-9'-]+$/;
+const regularNameRegex = /^[a-zA-Zéèàîïêëûü' -]+$/;
+const addressRegex = /^[a-zA-Z0-9éèàîïêëûü' -]+$/;
 
 export const validateEmail = (inputEmail) => {
     return emailRegex.test(inputEmail);
