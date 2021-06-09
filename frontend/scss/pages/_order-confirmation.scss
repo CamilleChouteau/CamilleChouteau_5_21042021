@@ -48,3 +48,16 @@
         color: indianred;
     }
 }
+
+.continue-shopping {
+    font-family: $font-description;
+    text-decoration: none;
+    color: black;
+    background-color: $color-quaternary;
+    padding: 0.2rem 0.7rem;
+    border-radius: 1.88rem;
+
+    &:hover {
+        background-color: $color-secondary;
+    }
+}
