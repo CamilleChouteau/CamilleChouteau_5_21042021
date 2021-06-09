@@ -106,6 +106,11 @@ const setupOrderButton = () => {
     const orderButton = document.getElementById("orderButton");
 
     orderButton.addEventListener("click", async () => {
+        const cart = getCart();
+        if (cart.length === 0) {
+            alert("Your cart is empty");
+            return;
+        }
         if (
             validateRegularName(lastNameInput.value) === false ||
             validateRegularName(firstNameInput.value) === false ||
@@ -125,7 +130,6 @@ const setupOrderButton = () => {
             city: cityInput.value,
         };
 
-        const cart = getCart();
         const productsIds = [];
         for (const savedProduct of cart) {
             productsIds.push(savedProduct.id);

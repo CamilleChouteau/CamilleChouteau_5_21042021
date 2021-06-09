@@ -26,7 +26,7 @@ const getAndPopulateProducts = () => {
     });
 };
 
-// Prend en argument  un tableau qui contient des produits
+// Prend en argument un tableau qui contient des produits
 const displayProducts = (products) => {
     for (let product of products) {
         displayProduct(product);
